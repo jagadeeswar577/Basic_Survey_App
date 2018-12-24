@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <% if !@surveys.blank? %>
+            <table id="mytable" class="table table-bordred table-striped">
+
+              <thead>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Take Survey</th>
+              <th>View Survey</th>
+              <th>Edit</th>
+              <th>Delete</th>
+              </thead>
+              <tbody>
+              <% @surveys.each do |survey| %>
+                  <tr>
+                    <td><%= survey.name %></td>
+                    <td><%= survey.description %></td>
+                    <td><%= link_to "Start", "surveys/#{survey.id}/take_survey" %></td>
+                    <td><%= link_to "View", survey_path(survey.id) %></td>
+                    <td><%= link_to "Edit", edit_survey_path(survey.id) %></td>
+                    <td><%= link_to "Delete", survey_path(survey), data: {confirm: "Are you sure?", method: "delete"} %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+
+            </table>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

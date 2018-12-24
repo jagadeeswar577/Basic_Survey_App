@@ -1,0 +1,26 @@
+<p>
+  <strong>Name:</strong>
+  <%= @survey.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @survey.description %>
+</p>
+
+
+<ol>
+  <% for question in @survey.questions %>
+      <li><%= h question.name %></li>
+      <ul>
+        <% for res in question.responses %>
+            <li><%= h  res.response %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</ol>
+
+<p>
+  <%= link_to "Edit", edit_survey_path(@survey) %> |
+  <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %>
+</p>

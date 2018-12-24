@@ -1,0 +1,9 @@
+<%= form_tag('/surveys/submit_survey') do%>
+    <h4><%= @survey.name%></h4></br>
+    <% @survey.questions.each_with_index  do |question, index| %>
+            <p><%= question.name%></p></br>
+            <%= hidden_field_tag "survey[responses]#{index}[question_id]", question.id %>
+            <%= text_area_tag "survey[responses]#{index}[response]","", class: "form-control"%></br>
+    <% end %>
+    <%= submit_tag 'Save', class: "btn-success" %>
+<% end %>
