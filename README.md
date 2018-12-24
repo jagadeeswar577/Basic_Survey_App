@@ -3,23 +3,23 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Ruby Version:
 
-* Ruby version
+ruby 2.3.1p112
 
-* System dependencies
+Rails Version:
 
-* Configuration
+Rails 5.2.2
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # Basic_Survey_App
+
+Functionalities
+
+• See a list of existing surveys
+• Create/edit/delete a survey
+• Add/delete/edit questions to a survey
+• For each survey, see a list of survey responses from the normal users.
+
+Check seed.rb for login details
+
